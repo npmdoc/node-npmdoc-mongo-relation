@@ -1,0 +1,193 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/JamesS237/mongo-relation/">mongo-relation (v0.5.4)</a>
+</h1>
+<h4>Model relationships plugin for Mongoose</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mongo-relation">module mongo-relation</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mongo-relation.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mongo-relation.utils">module mongo-relation.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongo-relation.utils.merge">
+            function <span class="apidocSignatureSpan">mongo-relation.utils.</span>merge
+            <span class="apidocSignatureSpan">(to, from)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongo-relation.utils.pluralize">
+            function <span class="apidocSignatureSpan">mongo-relation.utils.</span>pluralize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongo-relation.utils.random">
+            function <span class="apidocSignatureSpan">mongo-relation.utils.</span>random
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mongo-relation" id="apidoc.module.mongo-relation">module mongo-relation</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mongo-relation.utils" id="apidoc.module.mongo-relation.utils">module mongo-relation.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mongo-relation.utils.merge" id="apidoc.element.mongo-relation.utils.merge">
+        function <span class="apidocSignatureSpan">mongo-relation.utils.</span>merge
+        <span class="apidocSignatureSpan">(to, from)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function merge(to, from) {
+  var keys = Object.keys(from), i = keys.length, key;
+  while (i--) {
+    key = keys[i];
+    if ('undefined' === typeof to[key]) {
+      to[key] = from[key];
+    } else {
+      merge(to[key], from[key]);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongo-relation.utils.pluralize" id="apidoc.element.mongo-relation.utils.pluralize">
+        function <span class="apidocSignatureSpan">mongo-relation.utils.</span>pluralize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pluralize = function (str) {
+  var rule, found;
+  if (!~uncountables.indexOf(str.toLowerCase())) {
+    found = rules.filter(function (rule) {
+      return str.match(rule[0]);
+    });
+    if (found[0])
+      return str.replace(found[0][0], found[0][1]);
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongo-relation.utils.random" id="apidoc.element.mongo-relation.utils.random">
+        function <span class="apidocSignatureSpan">mongo-relation.utils.</span>random
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">random = function () {
+  return Math.random().toString().substr(3);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+/**
+ * Generates a random string
+ *
+ * @api private
+ */
+exports.random = function () {
+  return Math.<span class="apidocCodeKeywordSpan">random</span>().toString().substr(3);
+};
+/**
+ * Pluralization rules.
+ */
+var rules = [
+[
+  /(m)an$/gi,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
