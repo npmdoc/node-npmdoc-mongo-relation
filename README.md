@@ -1,4 +1,7 @@
-# api documentation for  [mongo-relation (v0.5.4)](https://github.com/JamesS237/mongo-relation/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mongo-relation.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mongo-relation) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mongo-relation.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mongo-relation)
+# npmdoc-mongo-relation
+
+#### basic api documentation for  [mongo-relation (v0.5.4)](https://github.com/JamesS237/mongo-relation/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mongo-relation.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mongo-relation) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mongo-relation.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mongo-relation)
+
 #### Model relationships plugin for Mongoose
 
 [![NPM](https://nodei.co/npm/mongo-relation.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mongo-relation)
@@ -65,7 +68,8 @@
         "nyan": "mocha -R nyan specs/*.spec.js",
         "test": "mocha -R spec specs/*.spec.js"
     },
-    "version": "0.5.4"
+    "version": "0.5.4",
+    "bin": {}
 }
 ```
 
